@@ -42,6 +42,31 @@ void mergeSort(int low, int high)
 
     int mid = (low + high) / 2;
 
+    // step 3 
+    // fungsi rekursi - memanggil diri sendiri 
+    mergeSort(low, mid);
+    mergeSort(mid + 1, high);
+
+    // step 4
+    int i = low;
+    int j = mid + 1;
+    int k = low; 
+
+    while (i <= mid && j <= high)
+    {
+        if (arr[i] <= arr[j])
+        {
+            B[k] = arr[i];
+            i++;
+        }
+        else    
+        {
+            B[k] = arr[j];
+            j++;
+        }
+        k++;
+    }
+
 }
 
     
